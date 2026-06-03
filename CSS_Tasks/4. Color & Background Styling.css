@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+.header-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.header-gradient h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.header-gradient p {
+    margin: 10px 0 0 0;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.nav-bar {
+    background-color: #222;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.nav-bar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.nav-bar a:hover {
+    background-color: #667eea;
+    border-radius: 3px;
+}
+
+.hero-section {
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero-section h2 {
+    font-size: 32px;
+    margin: 0 0 15px 0;
+}
+
+.hero-section p {
+    font-size: 18px;
+    margin: 0;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.events-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.event-card {
+    background-color: #ffffff;
+    border-left: 5px solid #667eea;
+    padding: 20px;
+    flex: 1;
+    min-width: 250px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.event-card h3 {
+    color: #667eea;
+    margin-top: 0;
+}
+
+.event-card p {
+    color: #666;
+}
+
+.accent-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-left: none;
+}
+
+.accent-card h3 {
+    color: #fff;
+}
+
+.accent-card p {
+    color: #f0f0f0;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}

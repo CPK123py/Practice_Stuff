@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model & Layout Control</title>
+    <link rel="stylesheet" href="8. Box Model & Layout.css">
+</head>
+<body>
+    <header>
+        <h1>Box Model & Layout Control</h1>
+    </header>
+    
+    <main>
+        <section class="demo-section">
+            <h2>Event Cards with Box Model</h2>
+            
+            <div class="eventCard">
+                <h3>Community Cleanup</h3>
+                <p>Join us for a community-wide cleanup drive this Saturday morning.</p>
+                <button>Register</button>
+            </div>
+            
+            <div class="eventCard">
+                <h3>Summer Festival</h3>
+                <p>Celebrate summer with live music, food, and family entertainment.</p>
+                <button>Register</button>
+            </div>
+            
+            <div class="eventCard">
+                <h3>Art Workshop</h3>
+                <p>Learn new artistic techniques from local professionals.</p>
+                <button>Register</button>
+            </div>
+        </section>
+        
+        <section class="form-section">
+            <h2>Registration Form</h2>
+            
+            <form>
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" placeholder="Enter your name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="event">Select Event:</label>
+                    <select id="event">
+                        <option>Choose an event</option>
+                        <option>Community Cleanup</option>
+                        <option>Summer Festival</option>
+                        <option>Art Workshop</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit Registration</button>
+            </form>
+        </section>
+        
+        <section class="visibility-demo">
+            <h2>Visibility & Display Demo</h2>
+            
+            <div class="visible-box">
+                <p>This box is normally visible (display: block)</p>
+            </div>
+            
+            <div class="hidden-box">
+                <p>This box has display: none (completely removed from layout)</p>
+            </div>
+            
+            <div class="invisible-box">
+                <p>This box has visibility: hidden (hidden but takes up space)</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

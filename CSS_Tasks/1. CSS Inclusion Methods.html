@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal - CSS Inclusion Methods</title>
+    
+    <!-- INTERNAL STYLE (Embedded in <head>) -->
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+    
+    <!-- EXTERNAL STYLESHEET -->
+    <link rel="stylesheet" href="1. CSS Inclusion Methods.css">
+</head>
+<body>
+    <div class="container">
+        <!-- INLINE STYLE (Applied directly to element) -->
+        <h1 style="color: red;">Welcome to Local Community Event Portal</h1>
+        
+        <h2>CSS Inclusion Methods Demo</h2>
+        
+        <p><strong>Inline Style:</strong> The heading above uses inline CSS (style="color: red;")</p>
+        <p><strong>Internal Style:</strong> This page's body background is styled with an embedded &lt;style&gt; tag in the &lt;head&gt;</p>
+        <p><strong>External Stylesheet:</strong> This paragraph styling comes from an external 1. CSS Inclusion Methods.css file</p>
+        
+        <div class="event-card">
+            <h3>Community Cleanup Event</h3>
+            <p>Join us for a community cleanup drive this Saturday at Ramsett Park.</p>
+        </div>
+        
+        <div class="event-card">
+            <h3>Summer Festival</h3>
+            <p>Celebrate summer with live music, food trucks, and family activities.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug and Test with Dev Tools</title>
+    <link rel="stylesheet" href="11. Debug and Test.css">
+</head>
+<body>
+    <header>
+        <h1>Debug and Test with Dev Tools</h1>
+        <p class="subtitle">Learn CSS debugging techniques</p>
+    </header>
+    
+    <nav class="navbar">
+        <ul>
+            <li><a href="#inspect">Inspect Styles</a></li>
+            <li><a href="#layout">Check Layout</a></li>
+            <li><a href="#responsive">Test Responsive</a></li>
+            <li><a href="#performance">Performance</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="inspect" class="debug-section">
+            <h2>Inspect Element Styles</h2>
+            <div class="test-box">
+                <p>Right-click on this box and select "Inspect" to view CSS properties. 
+                Try modifying values live in DevTools to test different styles.</p>
+            </div>
+        </section>
+        
+        <section id="layout" class="debug-section">
+            <h2>Box Model Debugging</h2>
+            <div class="box-model-demo">
+                <h3>Hover over this element to see the box model</h3>
+                <p>Open DevTools and inspect this element. The Elements panel shows the 
+                box model with margin, border, padding, and content areas color-coded.</p>
+            </div>
+        </section>
+        
+        <section id="responsive" class="debug-section">
+            <h2>Test Responsive Design</h2>
+            <div class="responsive-grid">
+                <div class="grid-item">Item 1</div>
+                <div class="grid-item">Item 2</div>
+                <div class="grid-item">Item 3</div>
+                <div class="grid-item">Item 4</div>
+            </div>
+            <p class="device-info">Use Chrome DevTools' device toolbar (Ctrl+Shift+M) to test different screen sizes.</p>
+        </section>
+        
+        <section id="performance" class="debug-section">
+            <h2>Network and Performance</h2>
+            <div class="perf-demo">
+                <h3>Check CSS Loading</h3>
+                <p>Open DevTools → Network tab to verify that CSS files are loaded correctly 
+                and check their size and load time. Look for any failed resources (status 404).</p>
+                
+                <h3>Performance Testing</h3>
+                <p>Use DevTools → Performance tab to measure layout reflows and repaints. 
+                This helps identify CSS that may impact page performance.</p>
+            </div>
+        </section>
+        
+        <section class="tips-section">
+            <h2>DevTools Tips for CSS Debugging</h2>
+            <ul class="tips-list">
+                <li><strong>Inspect Element:</strong> Right-click any element and select "Inspect" or press F12</li>
+                <li><strong>Edit Live:</strong> Double-click CSS values in DevTools to test changes instantly</li>
+                <li><strong>Device Toolbar:</strong> Press Ctrl+Shift+M to test responsive design</li>
+                <li><strong>Network Tab:</strong> Monitor CSS file loading and performance</li>
+                <li><strong>Coverage Tab:</strong> Check which CSS is actually being used on the page</li>
+                <li><strong>Console:</strong> Use JavaScript to test CSS properties programmatically</li>
+                <li><strong>Computed Styles:</strong> See all applied styles including inherited ones</li>
+                <li><strong>Box Model Panel:</strong> Visualize margin, border, padding, and content areas</li>
+            </ul>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Community Events. All rights reserved.</p>
+    </footer>
+</body>
+</html>
