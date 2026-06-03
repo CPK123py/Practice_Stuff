@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning Utilities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-warning py-4">
+        <div class="container">
+            <h1>Positioning Utilities</h1>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <section class="mb-5">
+            <h2 class="mb-4">Fixed Footer</h2>
+            <div class="alert alert-info">
+                The footer at the bottom of this page uses position-fixed with bottom-0 and width-100 to stick to the viewport.
+            </div>
+            <p>Scroll down to see the fixed footer in action. Fixed positioning keeps the footer visible at the bottom of the screen regardless of scrolling.</p>
+            <p>This is useful for navigation, important calls-to-action, or contact information that should always be accessible.</p>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="mb-4">Relative and Absolute Positioning</h2>
+            <div class="position-relative bg-light p-5 mb-4" style="height: 300px;">
+                <div class="position-absolute top-0 start-0 bg-primary text-white p-2">Top Left</div>
+                <div class="position-absolute top-0 end-0 bg-success text-white p-2">Top Right</div>
+                <div class="position-absolute bottom-0 start-0 bg-danger text-white p-2">Bottom Left</div>
+                <div class="position-absolute bottom-0 end-0 bg-warning p-2">Bottom Right</div>
+                <p class="position-absolute top-50 start-50">Centered</p>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="mb-4">Badge Overlay on Image</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="position-relative d-inline-block">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='250'%3E%3Crect fill='%23ddd' width='100%25' height='100%25'/%3E%3C/svg%3E" class="img-fluid rounded" alt="Event">
+                        <span class="position-absolute top-0 end-0 badge bg-danger m-2">Featured</span>
+                    </div>
+                    <p class="mt-3">Summer Festival</p>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="position-relative d-inline-block">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='250'%3E%3Crect fill='%23ddd' width='100%25' height='100%25'/%3E%3C/svg%3E" class="img-fluid rounded" alt="Event">
+                        <span class="position-absolute bottom-0 start-0 badge bg-success m-2">July 15</span>
+                    </div>
+                    <p class="mt-3">Community Picnic</p>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="position-relative d-inline-block">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='250'%3E%3Crect fill='%23ddd' width='100%25' height='100%25'/%3E%3C/svg%3E" class="img-fluid rounded" alt="Event">
+                        <span class="position-absolute top-50 start-50 translate-middle badge bg-primary rounded-pill">New</span>
+                    </div>
+                    <p class="mt-3">Holiday Parade</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="mb-4">Sticky Positioning</h2>
+            <div class="position-sticky top-0 bg-info text-white p-3 mb-3">
+                This element sticks to the top when scrolling
+            </div>
+            <p>Sticky positioning is useful for headers, navigation, or other elements that should remain visible while scrolling through content.</p>
+        </section>
+
+        <section>
+            <h2 class="mb-4">Toast Notifications</h2>
+            <div class="position-fixed bottom-0 end-0 p-3">
+                <div class="toast show bg-success text-white">
+                    <div class="toast-body">
+                        Event registered successfully!
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="position-fixed bottom-0 w-100 bg-dark text-white text-center py-3">
+        <p class="mb-0">&copy; 2026 Pawnee Parks and Recreation Department</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

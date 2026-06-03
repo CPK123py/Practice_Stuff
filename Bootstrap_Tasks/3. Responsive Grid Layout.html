@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid Layout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-success text-white py-4">
+        <div class="container">
+            <h1>Responsive Grid Layout</h1>
+            <p>Three columns: vertical on mobile, 2 on tablets, 3 on desktops</p>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <section class="mb-5">
+            <h2 class="mb-4">Responsive Column Layout</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Summer Festival</h5>
+                            <p class="card-text">Annual summer celebration with local food and music.</p>
+                            <span class="badge bg-success">June</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Community Picnic</h5>
+                            <p class="card-text">Family-friendly outdoor picnic with games and activities.</p>
+                            <span class="badge bg-info">July</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Holiday Parade</h5>
+                            <p class="card-text">Festive parade featuring floats and performances.</p>
+                            <span class="badge bg-danger">December</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="mb-4">Using .container, .row, and .col-* Classes</h2>
+            <div class="alert alert-info">
+                <h5>Breakpoints</h5>
+                <ul>
+                    <li><strong>col-12:</strong> Full width on mobile (xs)</li>
+                    <li><strong>col-md-6:</strong> Half width on tablets (md: 768px)</li>
+                    <li><strong>col-lg-4:</strong> One-third width on desktops (lg: 992px)</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

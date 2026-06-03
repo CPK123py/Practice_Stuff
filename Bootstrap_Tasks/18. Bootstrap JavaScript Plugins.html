@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap JavaScript Plugins</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="bg-dark text-white py-4">
+        <div class="container">
+            <h1>Bootstrap 5 JavaScript Plugins</h1>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <section class="mb-5">
+            <h2 class="mb-4">Modal Plugin</h2>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#eventModal">
+                Open Event Modal
+            </button>
+
+            <div class="modal fade" id="eventModal" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Summer Festival 2026</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Join us for our annual Summer Festival featuring:</p>
+                            <ul>
+                                <li>Live music performances from local bands</li>
+                                <li>Food vendors offering local cuisine</li>
+                                <li>Family-friendly activities and games</li>
+                                <li>Arts and crafts booths</li>
+                            </ul>
+                            <p><strong>Date:</strong> July 15, 2026</p>
+                            <p><strong>Location:</strong> Central Park</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Register Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="mb-4">Accordion Plugin</h2>
+            <div class="accordion" id="accordionFAQ">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                            What events are coming up this summer?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body">
+                            We have Summer Festival (July 15), Community Picnic (August 20), and various smaller events throughout the season.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                            How do I register for events?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body">
+                            You can register online on our website or visit the Parks and Recreation office in person. Some events are free, others have a small registration fee.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                            Are events family-friendly?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body">
+                            Yes! Most of our events are designed to be family-friendly with activities for all ages. Some events have specific age recommendations noted in the event details.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="mb-4">Dropdown Plugin</h2>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Event Categories
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Outdoor Events</a></li>
+                    <li><a class="dropdown-item" href="#">Indoor Events</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">All Events</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="mb-4">Popover Plugin</h2>
+            <button type="button" class="btn btn-info" data-bs-toggle="popover" data-bs-title="Quick Info" data-bs-content="Click here to see quick information about this section">
+                Hover for Popover
+            </button>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="mb-4">Tooltip Plugin</h2>
+            <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" title="This is a helpful tooltip">
+                Hover for Tooltip
+            </button>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="mb-4">Carousel Plugin</h2>
+            <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#eventCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#eventCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#eventCarousel" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='300'%3E%3Crect fill='%23667eea' width='100%25' height='100%25'/%3E%3Ctext x='50%25' y='50%25' font-size='40' fill='white' text-anchor='middle' dy='.3em'%3ESummer Festival%3C/text%3E%3C/svg%3E" class="d-block w-100" alt="Summer Festival">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Summer Festival</h5>
+                            <p>July 15, 2026 - Central Park</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='300'%3E%3Crect fill='%23764ba2' width='100%25' height='100%25'/%3E%3Ctext x='50%25' y='50%25' font-size='40' fill='white' text-anchor='middle' dy='.3em'%3ECommunity Picnic%3C/text%3E%3C/svg%3E" class="d-block w-100" alt="Community Picnic">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Community Picnic</h5>
+                            <p>August 20, 2026 - Riverside Park</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='300'%3E%3Crect fill='%2328a745' width='100%25' height='100%25'/%3E%3Ctext x='50%25' y='50%25' font-size='40' fill='white' text-anchor='middle' dy='.3em'%3EHoliday Parade%3C/text%3E%3C/svg%3E" class="d-block w-100" alt="Holiday Parade">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Holiday Parade</h5>
+                            <p>December 10, 2026 - Main Street</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="mb-4">Alert Plugin (Dismissible)</h2>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Upcoming Deadline!</strong> Register for Summer Festival by July 1st to get early bird pricing.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+
+            const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+            popoverTriggerList.map(function (popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl);
+            });
+        });
+    </script>
+</body>
+</html>

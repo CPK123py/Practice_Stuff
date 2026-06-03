@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alignment and Reordering in Grid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-danger text-white py-4">
+        <div class="container">
+            <h1>Alignment and Reordering in Grid</h1>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <section class="mb-5">
+            <h2 class="mb-4">Centered Content with justify-content and align-items</h2>
+            <div class="row justify-content-center align-items-center" style="height: 300px; background-color: #f0f0f0;">
+                <div class="col-md-6 text-center">
+                    <h3>Centered Event Card</h3>
+                    <p>This content is centered both horizontally and vertically using Bootstrap flexbox utilities.</p>
+                    <button class="btn btn-primary">Learn More</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="mb-4">Reorder Columns on Different Screen Sizes</h2>
+            <div class="row g-4">
+                <div class="col-md-6 order-md-2">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h5 class="card-title">Image Section</h5>
+                            <p class="card-text">On mobile: appears second | On tablet+: appears first</p>
+                            <p class="text-muted">Use order-md-2 to reorder on medium screens</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <div class="card bg-primary text-white">
+                        <div class="card-body">
+                            <h5 class="card-title">Text Content</h5>
+                            <p class="card-text">On mobile: appears first | On tablet+: appears second</p>
+                            <p>Use order-md-1 to reorder on medium screens</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="mb-4">Multiple Alignment Variations</h2>
+            <div class="row justify-content-between align-items-end mb-3">
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">Left Aligned</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">Right Aligned</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colors and Backgrounds</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-dark text-white py-4">
+        <div class="container">
+            <h1>Colors and Backgrounds</h1>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <section class="mb-5">
+            <h2 class="mb-4">Text Color Classes</h2>
+            <p class="text-primary">Text in primary color (blue)</p>
+            <p class="text-success">Text in success color (green)</p>
+            <p class="text-danger">Text in danger color (red)</p>
+            <p class="text-warning">Text in warning color (orange)</p>
+            <p class="text-info">Text in info color (cyan)</p>
+            <p class="text-muted">Text in muted color (gray)</p>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="mb-4">Background Color Classes</h2>
+            <div class="p-3 mb-2 bg-primary text-white">bg-primary - Primary background</div>
+            <div class="p-3 mb-2 bg-success text-white">bg-success - Success background</div>
+            <div class="p-3 mb-2 bg-danger text-white">bg-danger - Danger background</div>
+            <div class="p-3 mb-2 bg-warning">bg-warning - Warning background</div>
+            <div class="p-3 mb-2 bg-info">bg-info - Info background</div>
+            <div class="p-3 bg-secondary text-white">bg-secondary - Secondary background</div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="mb-4">Dashboard with Contextual Colors</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="card border-primary">
+                        <div class="card-body bg-primary text-white">
+                            <h5 class="card-title">Events</h5>
+                            <p class="h3">12</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="card border-success">
+                        <div class="card-body bg-success text-white">
+                            <h5 class="card-title">Registrations</h5>
+                            <p class="h3">245</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="card border-warning">
+                        <div class="card-body bg-warning">
+                            <h5 class="card-title">Pending</h5>
+                            <p class="h3">8</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="card border-danger">
+                        <div class="card-body bg-danger text-white">
+                            <h5 class="card-title">Cancelled</h5>
+                            <p class="h3">3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="mb-4">Gradient Background</h2>
+            <div class="p-5 mb-4 bg-gradient" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <h3>Dark Gradient with White Text</h3>
+                <p>Using CSS linear-gradient with bg-dark styling</p>
+            </div>
+
+            <div class="p-5 bg-gradient" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <h3>Gradient Example</h3>
+                <p>Beautiful gradient background for hero sections and highlights</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
