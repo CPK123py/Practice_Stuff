@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6. Arrays and Methods</title>
+    <style>
+        body { font-family: Arial; max-width: 800px; margin: 50px auto; padding: 20px; background: #f5f5f5; }
+        section { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        h1 { color: #333; }
+        .event { background: #f0f0f0; padding: 10px; margin: 5px 0; border-left: 4px solid #007bff; }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Task 6: Arrays and Methods</h1>
+        <div id="output"></div>
+    </section>
+
+    <script>
+        const events = [
+            { name: 'Harvest Festival', category: 'festival' },
+            { name: 'Summer Concert', category: 'music' },
+            { name: 'Founders Day Gala', category: 'gala' }
+        ];
+
+        events.push({ name: 'Spring Cleanup', category: 'volunteer' });
+
+        const musicEvents = events.filter(e => e.category === 'music');
+
+        const formattedEvents = events.map(e => `<div class="event">${e.name}</div>`);
+
+        const allCategories = events.map(e => e.category);
+
+        let html = '<h3>All Events:</h3>' + formattedEvents.join('');
+        html += '<h3>Music Events:</h3>' + musicEvents.map(e => `<p>${e.name}</p>`).join('');
+        html += `<h3>All Categories:</h3><p>${allCategories.join(', ')}</p>`;
+
+        document.getElementById('output').innerHTML = html;
+
+        console.log('Events array:', events);
+        console.table(events);
+    </script>
+</body>
+</html>

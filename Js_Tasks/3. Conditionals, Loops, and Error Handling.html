@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. Conditionals, Loops, and Error Handling</title>
+    <style>
+        body { font-family: Arial; max-width: 800px; margin: 50px auto; padding: 20px; background: #f5f5f5; }
+        section { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        h1 { color: #333; }
+        .event { background: #f0f0f0; padding: 10px; margin: 5px 0; border-left: 4px solid #007bff; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Task 3: Conditionals, Loops, and Error Handling</h1>
+        <div id="output"></div>
+    </section>
+
+    <script>
+        const events = [
+            { name: 'Harvest Festival', seats: 50, date: '2026-09-15' },
+            { name: 'Summer Concert', seats: 0, date: '2026-07-20' },
+            { name: 'Founders Day Gala', seats: 25, date: '2026-06-10' }
+        ];
+
+        let html = '<h3>Available Events:</h3>';
+
+        try {
+            events.forEach(event => {
+                if (event.seats > 0) {
+                    html += `<div class="event">${event.name} - ${event.seats} seats available</div>`;
+                } else {
+                    console.warn(`Event ${event.name} is full`);
+                }
+            });
+
+            if (html === '<h3>Available Events:</h3>') {
+                throw new Error('No available events found');
+            }
+        } catch (error) {
+            html += `<p class="error">Error: ${error.message}</p>`;
+            console.error(error);
+        }
+
+        document.getElementById('output').innerHTML = html;
+    </script>
+</body>
+</html>

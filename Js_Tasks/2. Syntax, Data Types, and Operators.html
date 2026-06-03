@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. Syntax, Data Types, and Operators</title>
+    <style>
+        body { font-family: Arial; max-width: 800px; margin: 50px auto; padding: 20px; background: #f5f5f5; }
+        section { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        h1 { color: #333; }
+        .output { background: #f0f0f0; padding: 10px; margin: 10px 0; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Task 2: Syntax, Data Types, and Operators</h1>
+        <div id="output"></div>
+    </section>
+
+    <script>
+        const eventName = 'Harvest Festival';
+        const eventDate = '2026-09-15';
+        let availableSeats = 50;
+
+        const eventInfo = `Event: ${eventName}, Date: ${eventDate}, Seats: ${availableSeats}`;
+        console.log(eventInfo);
+
+        availableSeats++;
+        console.log(`Seats after increment: ${availableSeats}`);
+
+        availableSeats--;
+        console.log(`Seats after decrement: ${availableSeats}`);
+
+        const result = `
+            Event Details:
+            - Name: ${eventName}
+            - Date: ${eventDate}
+            - Available Seats: ${availableSeats}
+            - Calculated: ${10 + 5 * 2}
+        `;
+
+        document.getElementById('output').innerHTML = `<div class="output"><pre>${result}</pre></div>`;
+        console.log(result);
+    </script>
+</body>
+</html>

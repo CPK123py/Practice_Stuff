@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4. Functions, Scope, Closures, Higher-Order Functions</title>
+    <style>
+        body { font-family: Arial; max-width: 800px; margin: 50px auto; padding: 20px; background: #f5f5f5; }
+        section { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        h1 { color: #333; }
+        .output { background: #f0f0f0; padding: 10px; margin: 10px 0; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Task 4: Functions, Scope, Closures, Higher-Order Functions</h1>
+        <div id="output"></div>
+    </section>
+
+    <script>
+        const events = [
+            { name: 'Harvest Festival', category: 'festival', price: 10 },
+            { name: 'Summer Concert', category: 'music', price: 5 },
+            { name: 'Founders Day Gala', category: 'gala', price: 20 }
+        ];
+
+        const createRegistrationCounter = (category) => {
+            let count = 0;
+            return {
+                register: () => ++count,
+                getCount: () => count,
+                reset: () => count = 0
+            };
+        };
+
+        const musicCounter = createRegistrationCounter('music');
+        const festivalCounter = createRegistrationCounter('festival');
+
+        musicCounter.register();
+        musicCounter.register();
+        festivalCounter.register();
+
+        function filterEventsByCategory(category, callback) {
+            const filtered = events.filter(e => e.category === category);
+            if (callback) callback(filtered);
+            return filtered;
+        }
+
+        function displayEvents(eventList) {
+            console.log('Filtered events:', eventList);
+        }
+
+        const result = `
+            Registrations by category:
+            - Music: ${musicCounter.getCount()}
+            - Festival: ${festivalCounter.getCount()}
+        `;
+
+        const musicEvents = filterEventsByCategory('music', displayEvents);
+
+        document.getElementById('output').innerHTML = `<div class="output"><pre>${result}</pre></div>`;
+    </script>
+</body>
+</html>

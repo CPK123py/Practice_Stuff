@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7. DOM Manipulation</title>
+    <style>
+        body { font-family: Arial; max-width: 800px; margin: 50px auto; padding: 20px; background: #f5f5f5; }
+        section { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        h1 { color: #333; }
+        .event-card { background: #f0f0f0; padding: 15px; margin: 10px 0; border-left: 4px solid #007bff; border-radius: 4px; }
+        button { padding: 8px 15px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Task 7: DOM Manipulation</h1>
+        <button onclick="addEvent()">Add Event</button>
+        <div id="eventContainer"></div>
+    </section>
+
+    <script>
+        const events = [
+            { name: 'Harvest Festival', date: '2026-09-15' },
+            { name: 'Summer Concert', date: '2026-07-20' },
+            { name: 'Founders Day Gala', date: '2026-06-10' }
+        ];
+
+        function renderEvents() {
+            const container = document.getElementById('eventContainer');
+            container.innerHTML = '';
+
+            events.forEach(event => {
+                const card = document.createElement('div');
+                card.className = 'event-card';
+                card.textContent = `${event.name} - ${event.date}`;
+                container.appendChild(card);
+            });
+        }
+
+        function addEvent() {
+            events.push({ name: 'New Event', date: '2026-12-01' });
+            renderEvents();
+        }
+
+        renderEvents();
+    </script>
+</body>
+</html>

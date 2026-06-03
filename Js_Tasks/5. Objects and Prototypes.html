@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5. Objects and Prototypes</title>
+    <style>
+        body { font-family: Arial; max-width: 800px; margin: 50px auto; padding: 20px; background: #f5f5f5; }
+        section { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        h1 { color: #333; }
+        .output { background: #f0f0f0; padding: 10px; margin: 10px 0; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Task 5: Objects and Prototypes</h1>
+        <div id="output"></div>
+    </section>
+
+    <script>
+        class Event {
+            constructor(name, date, price, seats) {
+                this.name = name;
+                this.date = date;
+                this.price = price;
+                this.seats = seats;
+            }
+
+            checkAvailability() {
+                return this.seats > 0;
+            }
+
+            getDetails() {
+                return `${this.name} - $${this.price}`;
+            }
+        }
+
+        Event.prototype.getSeatCount = function() {
+            return this.seats;
+        };
+
+        const event1 = new Event('Harvest Festival', '2026-09-15', 10, 50);
+        const event2 = new Event('Summer Concert', '2026-07-20', 5, 0);
+
+        let html = '<h3>Event Objects:</h3>';
+        
+        const entries = Object.entries(event1);
+        entries.forEach(([key, value]) => {
+            html += `<p>${key}: ${value}</p>`;
+        });
+
+        html += `<p>Available: ${event1.checkAvailability()}</p>`;
+        html += `<p>Details: ${event1.getDetails()}</p>`;
+        html += `<p>Seat Count: ${event1.getSeatCount()}</p>`;
+
+        document.getElementById('output').innerHTML = `<div class="output">${html}</div>`;
+        
+        console.log('Event object:', event1);
+        console.table([event1, event2]);
+    </script>
+</body>
+</html>
