@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Preferences - Event Portal</title>
+    <style>
+        .hilight{
+            color: aqua;
+            font-style: italic;
+        }
+        .gall{
+            height: 100px;
+            width: 120px;
+            border: 3px solid black;
+            object-fit: cover;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        fieldset {
+            width: 50%;
+            padding: 20px;
+            border: 2px solid #333;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px 5px 10px 0;
+            cursor: pointer;
+        }
+        .danger {
+            background-color: #dc3545;
+            color: white;
+        }
+        .success {
+            color: green;
+            margin-top: 15px;
+        }
+        .info {
+            color: blue;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#home">Home</a> 
+        <a href="#events">Events</a> 
+        <a href="#about">About</a> 
+        <a href="help.html" target="_blank">Help</a>
+    </nav>
+
+    <div id="welcomeBanner">
+        <h1 class="hilight">Event Preferences</h1>
+        <span style="color: red;font-weight: bold;">Save Your Favorite Events</span>
+    </div>
+    <br>
+
+    <form>
+        <fieldset>
+            <label for="eventType">Select Preferred Event:</label>
+            <select id="eventType" name="eventType" required>
+                <option value="">___choose event____</option>
+                <option value="harvest">Harvest Festival($10)</option>
+                <option value="concert">Summer Concert Series ($5)</option>
+                <option value="gala">Founders Day Gala ($20)</option>
+            </select>
+            <br><br>
+            <button type="button" onclick="savePreference()">Save Preference</button>
+            <button type="button" class="danger" onclick="clearPreferences()">Clear All Preferences</button>
+            <div id="message"></div>
+        </fieldset>
+    </form>
+
+    <footer>
+        <h3>Pawnee Parks and Rec Department</h3>
+    </footer>
+
+    <script>
+        function savePreference() {
+            const eventType = document.getElementById('eventType').value;
+            if (eventType) {
+                localStorage.setItem('preferredEvent', eventType);
+                sessionStorage.setItem('lastSelected', eventType);
+                showMessage('Preference saved!', 'success');
+            } else {
+                showMessage('Please select an event', 'info');
+            }
+        }
+
+        function clearPreferences() {
+            localStorage.clear();
+            sessionStorage.clear();
+            document.getElementById('eventType').value = '';
+            showMessage('All preferences cleared', 'success');
+        }
+
+        function loadPreference() {
+            const saved = localStorage.getItem('preferredEvent');
+            if (saved) {
+                document.getElementById('eventType').value = saved;
+                showMessage(`Loaded: ${saved}`, 'info');
+            }
+        }
+
+        function showMessage(text, type) {
+            const msg = document.getElementById('message');
+            msg.textContent = text;
+            msg.className = type;
+            setTimeout(() => msg.className = '', 3000);
+        }
+
+        window.addEventListener('load', loadPreference);
+    </script>
+</body>
+</html>

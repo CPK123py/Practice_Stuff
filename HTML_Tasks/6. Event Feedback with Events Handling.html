@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        .hilight{
+            color: aqua;
+            font-style: italic;
+        }
+        .gall{
+            height: 100px;
+            width: 120px;
+            border: 3px solid black;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required autofocus placeholder="Leslie Knope">
+            <br>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required  placeholder="leslie@pawnee.gov">
+            <br> 
+            <label for="event">Select Event:</label>
+            <select name="event" id="event" required>
+                <option value="">___choose event____</option>
+                <option value="harvest">Harvest Festival($10)</option>
+                 <option value="concert">Summer Concert Series ($5)</option>
+                <option value="gala">Founders Day Gala ($20)</option>
+            </select>
+            <br>
+            <label for="ticketCount">Number of Tickets:</label>
+            <input type="number" id="ticketCount" name="ticketCount" min="1" max="10" required value="1">
+
+            <br>
+            <label for="comments">Special Requirements / Comments:</label><br>
+            <textarea id="comments" name="comments" rows="4" placeholder="Any dietary or accessibility needs..."></textarea>
+
+            <br>
+            <label>
+                <input type="checkbox" name="terms" required> I agree to the community code of conduct.
+            </label>
+
+            <p>Total Cost: $<output name="totalPrice" id="totalPrice">0</output></p>
+
+            <button type="submit">Register Now</button>
+        </fieldset>
+        
+    </form>
+    <footer>
+         <!--Footer Tag-->
+         <h3>Pawnee Parks and Rec Department</h3>
+         </footer>
+
+
+         <script>
+            const evnt = document.getElementById('event');
+            const ticket = document.getElementById('ticketCount');
+            const price = document.getElementById('totalPrice');
+
+            const prices ={
+                'harvest': 10, 'concert':5, 'gala':20 
+            };
+
+
+            function CalcPrice(){
+                const selectedEvent = evnt.value;
+                const ticketCount = parseInt(ticket.value) || 0;
+
+                const pricePerTicket = prices[selectedEvent] || 0;
+
+        
+                const total = pricePerTicket * ticketCount;
+
+        
+                price.textContent = total;
+            }
+
+            evnt.addEventListener('change', CalcPrice);
+            ticket.addEventListener('input', CalcPrice);
+
+         </script>
+    
+</body>
+</html>

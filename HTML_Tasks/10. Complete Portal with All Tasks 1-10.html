@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Event Portal - All Tasks 1-10</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        nav {
+            background-color: #333;
+            padding: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .hilight{
+            color: aqua;
+            font-style: italic;
+        }
+        .gall{
+            height: 100px;
+            width: 120px;
+            border: 3px solid black;
+            object-fit: cover;
+        }
+        section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        #welcomeBanner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        #welcomeBanner h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        form {
+            display: grid;
+            gap: 15px;
+        }
+        input, select, textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: Arial;
+        }
+        button {
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button.danger {
+            background-color: #dc3545;
+        }
+        button.danger:hover {
+            background-color: #c82333;
+        }
+        button.success {
+            background-color: #28a745;
+        }
+        button.success:hover {
+            background-color: #218838;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        table th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+        .message {
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 4px;
+            display: none;
+        }
+        .message.success {
+            background-color: #d4edda;
+            color: #155724;
+            display: block;
+        }
+        .message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+        .message.info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            display: block;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        .gallery {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+        }
+        .tab-btn {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            border-bottom: 3px solid transparent;
+        }
+        .tab-btn.active {
+            border-bottom-color: #007bff;
+            color: #007bff;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .coords {
+            font-family: monospace;
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .event-item {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #f8f9fa;
+            border-left: 4px solid #007bff;
+        }
+        h2 {
+            color: #333;
+            margin: 20px 0 15px 0;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a onclick="scrollToSection('home')">Home</a>
+        <a onclick="scrollToSection('registration')">Registration</a>
+        <a onclick="scrollToSection('feedback')">Feedback</a>
+        <a onclick="scrollToSection('gallery')">Gallery</a>
+        <a onclick="scrollToSection('preferences')">Preferences</a>
+        <a onclick="scrollToSection('location')">Location</a>
+        <a onclick="scrollToSection('debugging')">Debug</a>
+    </nav>
+
+    <div class="container">
+        <section id="welcomeBanner">
+            <h1 class="hilight">Welcome to Pawnee Parks & Rec</h1>
+            <span style="color: white; font-weight: bold;">Complete Event Management Portal</span>
+        </section>
+
+        <section id="home">
+            <h2>Home</h2>
+            <p>Welcome to our community event portal. Manage your event preferences, register for upcoming events, and stay connected with your community.</p>
+            <p style="margin-top: 15px;">Featured Events:</p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Harvest Festival - $10</li>
+                <li>Summer Concert Series - $5</li>
+                <li>Founders Day Gala - $20</li>
+            </ul>
+        </section>
+
+        <section id="registration">
+            <h2>Event Registration</h2>
+            <form onsubmit="handleRegistration(event)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Leslie Knope">
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="leslie@pawnee.gov">
+                
+                <label for="event">Select Event:</label>
+                <select id="event" name="event" required onchange="calculatePrice()">
+                    <option value="">___choose event____</option>
+                    <option value="harvest">Harvest Festival($10)</option>
+                    <option value="concert">Summer Concert Series ($5)</option>
+                    <option value="gala">Founders Day Gala ($20)</option>
+                </select>
+                
+                <label for="ticketCount">Number of Tickets:</label>
+                <input type="number" id="ticketCount" name="ticketCount" min="1" max="10" value="1" onchange="calculatePrice()">
+                
+                <label for="comments">Special Requirements:</label>
+                <textarea id="comments" name="comments" rows="3" placeholder="Any special needs..."></textarea>
+                
+                <label>
+                    <input type="checkbox" name="terms" required> I agree to the community code of conduct.
+                </label>
+                
+                <p style="font-size: 18px; font-weight: bold;">Total Cost: $<span id="totalPrice">0</span></p>
+                
+                <button type="submit">Register Now</button>
+            </form>
+            <div id="regMessage" class="message"></div>
+        </section>
+
+        <section id="feedback">
+            <h2>Event Feedback</h2>
+            <form onsubmit="handleFeedback(event)">
+                <label for="feedbackEvent">Which event did you attend?</label>
+                <select id="feedbackEvent" name="feedbackEvent" required>
+                    <option value="">___choose event____</option>
+                    <option value="harvest">Harvest Festival</option>
+                    <option value="concert">Summer Concert Series</option>
+                    <option value="gala">Founders Day Gala</option>
+                </select>
+                
+                <label for="rating">Rating (1-5):</label>
+                <input type="range" id="rating" name="rating" min="1" max="5" value="3" oninput="updateRating()">
+                <span id="ratingValue">3</span>/5
+                
+                <label for="review">Your Feedback:</label>
+                <textarea id="review" name="review" rows="4" placeholder="Tell us about your experience..."></textarea>
+                
+                <button type="submit">Submit Feedback</button>
+            </form>
+            <div id="feedbackMessage" class="message"></div>
+        </section>
+
+        <section id="gallery">
+            <h2>Past Events Gallery</h2>
+            <table>
+                <caption>Highlights from Past Council Events</caption>
+                <tr>
+                    <td style="text-align: center;">Event 1</td>
+                    <td style="text-align: center;">Event 2</td>
+                    <td style="text-align: center;">Event 3</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">Event 4</td>
+                    <td style="text-align: center;">Event 5</td>
+                    <td style="text-align: center;">Event 6</td>
+                </tr>
+            </table>
+
+            <h2>Event Video</h2>
+            <video width="300" height="200" controls style="border: 2px solid #333;">
+                <source src="videoplayback (1).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <section id="preferences">
+            <h2>User Preferences</h2>
+            <label for="eventType">Select Your Preferred Event Type:</label>
+            <select id="eventType" name="eventType">
+                <option value="">___choose event____</option>
+                <option value="harvest">Harvest Festival($10)</option>
+                <option value="concert">Summer Concert Series ($5)</option>
+                <option value="gala">Founders Day Gala ($20)</option>
+            </select>
+            <br><br>
+            <button onclick="savePreference()">Save Preference</button>
+            <button class="danger" onclick="clearPreferences()">Clear All Preferences</button>
+            <div id="prefMessage" class="message"></div>
+        </section>
+
+        <section id="location">
+            <h2>Find Nearby Events</h2>
+            <p>Click the button to locate nearby events using your current position.</p>
+            <button class="success" id="geoBtn" onclick="findNearbyEvents()">Find Nearby Events</button>
+            <div id="geoResult"></div>
+        </section>
+
+        <section id="debugging">
+            <h2>Debugging & Development</h2>
+            <p>Open Chrome DevTools (F12) to access debugging features:</p>
+            <button onclick="logEventData()">Log Event Data to Console</button>
+            <button onclick="triggerError()">Trigger Console Error</button>
+            <button onclick="performCalculation()">Perform Calculation</button>
+            <button onclick="monitorLoop()">Monitor Processing Loop</button>
+            <div id="debugOutput" style="margin-top: 20px; padding: 15px; background-color: #f8f9fa; border-radius: 4px;"></div>
+        </section>
+    </div>
+
+    <footer>
+        <h3>Pawnee Parks and Rec Department</h3>
+        <p>&copy; 2024 All Rights Reserved</p>
+    </footer>
+
+    <script>
+        console.log('Event Portal Loaded - All Features Available');
+
+        const eventData = [
+            { name: 'Harvest Festival', price: 10, lat: 40.2206, lon: -85.1502 },
+            { name: 'Summer Concert Series', price: 5, lat: 40.2250, lon: -85.1490 },
+            { name: 'Founders Day Gala', price: 20, lat: 40.2180, lon: -85.1550 }
+        ];
+
+        const prices = { 'harvest': 10, 'concert': 5, 'gala': 20 };
+
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function calculatePrice() {
+            const event = document.getElementById('event').value;
+            const tickets = parseInt(document.getElementById('ticketCount').value) || 0;
+            const total = (prices[event] || 0) * tickets;
+            document.getElementById('totalPrice').textContent = total;
+        }
+
+        function handleRegistration(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const msg = document.getElementById('regMessage');
+            msg.className = 'message success';
+            msg.textContent = `Thank you for registering, ${name}!`;
+            console.log('Registration submitted:', { name, email: document.getElementById('email').value });
+            setTimeout(() => msg.className = 'message', 4000);
+        }
+
+        function updateRating() {
+            document.getElementById('ratingValue').textContent = document.getElementById('rating').value;
+        }
+
+        function handleFeedback(e) {
+            e.preventDefault();
+            const msg = document.getElementById('feedbackMessage');
+            msg.className = 'message success';
+            msg.textContent = 'Thank you for your feedback!';
+            console.log('Feedback submitted:', document.getElementById('review').value);
+            setTimeout(() => msg.className = 'message', 4000);
+        }
+
+        function savePreference() {
+            const eventType = document.getElementById('eventType').value;
+            if (eventType) {
+                localStorage.setItem('preferredEvent', eventType);
+                sessionStorage.setItem('lastSelected', eventType);
+                showPrefMessage('Preference saved!', 'success');
+            } else {
+                showPrefMessage('Please select an event', 'error');
+            }
+        }
+
+        function clearPreferences() {
+            localStorage.clear();
+            sessionStorage.clear();
+            document.getElementById('eventType').value = '';
+            showPrefMessage('All preferences cleared', 'success');
+        }
+
+        function loadPreference() {
+            const saved = localStorage.getItem('preferredEvent');
+            if (saved) {
+                document.getElementById('eventType').value = saved;
+            }
+        }
+
+        function showPrefMessage(text, type) {
+            const msg = document.getElementById('prefMessage');
+            msg.className = `message ${type}`;
+            msg.textContent = text;
+            setTimeout(() => msg.className = 'message', 3000);
+        }
+
+        function findNearbyEvents() {
+            const resultDiv = document.getElementById('geoResult');
+            const btn = document.getElementById('geoBtn');
+            
+            if (!navigator.geolocation) {
+                resultDiv.innerHTML = '<div class="message error">Geolocation not supported</div>';
+                return;
+            }
+
+            resultDiv.innerHTML = '<div class="message info">Getting your location...</div>';
+            btn.disabled = true;
+
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const { latitude, longitude, accuracy } = position.coords;
+                    displayNearbyEvents(latitude, longitude, accuracy);
+                    btn.disabled = false;
+                },
+                (error) => {
+                    let message = 'Error getting location';
+                    if (error.code === error.PERMISSION_DENIED) {
+                        message = 'Permission denied. Enable location access.';
+                    } else if (error.code === error.TIMEOUT) {
+                        message = 'Request timeout.';
+                    }
+                    resultDiv.innerHTML = `<div class="message error">${message}</div>`;
+                    btn.disabled = false;
+                },
+                { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+            );
+        }
+
+        function displayNearbyEvents(lat, lon, accuracy) {
+            const resultDiv = document.getElementById('geoResult');
+            let html = `<div class="message success">
+                <strong>Your Location:</strong>
+                <div class="coords">
+                    Latitude: ${lat.toFixed(6)}<br>
+                    Longitude: ${lon.toFixed(6)}<br>
+                    Accuracy: ±${accuracy.toFixed(2)}m
+                </div>
+                <strong>Nearby Events:</strong>`;
+            
+            eventData.forEach(event => {
+                const distance = calculateDistance(lat, lon, event.lat, event.lon);
+                html += `<div class="event-item">${event.name} - $${event.price}<br><small>${distance.toFixed(1)}km away</small></div>`;
+            });
+            
+            html += '</div>';
+            resultDiv.innerHTML = html;
+        }
+
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            const R = 6371;
+            const dLat = (lat2 - lat1) * Math.PI / 180;
+            const dLon = (lon2 - lon1) * Math.PI / 180;
+            const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                      Math.sin(dLon/2) * Math.sin(dLon/2);
+            return 6371 * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        }
+
+        function logEventData() {
+            console.log('=== Event Data ===');
+            console.table(eventData);
+            updateDebugOutput('Event data logged to console');
+        }
+
+        function triggerError() {
+            try {
+                const result = eventData.map(e => e.price).reduce((a,b) => a+b);
+                console.log('Total revenue potential: $' + result);
+                updateDebugOutput('Calculation completed: $' + result);
+            } catch(e) {
+                console.error('Error:', e.message);
+                updateDebugOutput('Error triggered - check console');
+            }
+        }
+
+        function performCalculation() {
+            console.log('Starting calculation...');
+            const total = eventData.reduce((sum, e) => sum + e.price, 0);
+            console.log('Total: $' + total);
+            updateDebugOutput('Calculation: Total value $' + total);
+        }
+
+        function monitorLoop() {
+            console.group('Event Processing');
+            eventData.forEach((e, i) => {
+                console.log(`[${i}] ${e.name}: $${e.price}`);
+            });
+            console.groupEnd();
+            updateDebugOutput('Loop monitoring - check console');
+        }
+
+        function updateDebugOutput(text) {
+            document.getElementById('debugOutput').innerHTML = '<strong>Last Action:</strong> ' + text;
+        }
+
+        window.addEventListener('load', loadPreference);
+    </script>
+</body>
+</html>
