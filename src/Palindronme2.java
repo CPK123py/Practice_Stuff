@@ -29,7 +29,7 @@
                         lp+=1;
                     }
                     else{
-                        return ispalin(dat,lp+1,rp) ||ispalin(dat,lp,rp-1);
+                        return ispalin(dat,lp+1,rp) ||ispalin(dat,lp,rp-1); 
                     }
                 }
 

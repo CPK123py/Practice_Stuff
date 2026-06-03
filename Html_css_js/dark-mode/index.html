@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+:root { --bg: white; --txt: black; --in: #333; --bd: #ddd }
+body { background: var(--bg); color: var(--txt); font-family: Arial; padding: 40px; transition: 0.3s }
+.cn { max-width: 400px }
+.tn { display: flex; align-items: center; gap: 10px; margin: 20px 0 }
+#togg { width: 50px; height: 24px; appearance: none; cursor: pointer }
+h1 { color: var(--txt) }
+input { width: 100%; padding: 10px; border: 1px solid var(--bd); border-radius: 4px; background: var(--bg); color: var(--txt) }
+body.d { --bg: #1a1a1a; --txt: white; --in: #444; --bd: #555 }
+</style>
+</head>
+<body>
+<div class="cn">
+<h1>Dk Md</h1>
+<div class="tn">
+<input type="checkbox" id="togg" onchange="document.body.classList.toggle('d')">
+<label for="togg">Tg</label>
+</div>
+<input type="text" placeholder="Typ smth">
+</div>
+</body>
+</html>
